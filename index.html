@@ -16,20 +16,28 @@
             <div id="cityname"></div>
             <div id="date"></div>
             <div id="time"></div>
-            <div id="tempraturediv"><span id="temperature"></span> °C</div>
-            <div id="changetemp">display F</div>
-            <img   class="svg-content">
+            <div id="tempraturediv"><span id="temperature"></span ><span id="tempsign"> </span></div>
+            <img   class="svg-content" id="icon"height="90" width="80">
+            <label for="changetemp">Display
+                <select id="changetemp">
+                  <option value="C">Celsius (°C)</option>
+                  <option value="F">Fahrenheit (°F)</option>
+                </select>
+              </label>
             <div class="searchbox">
-                <form id="searchForm" action="">
-                <input type="text" id="name">
+                <form id="searchForm" novalidate >
+                <input type="text" id="name" required >
                 <button type="submit" class="fas fa-search"id="searchbtn"></button>
             </form>
             </div>
+            <div class="err" id="error1" style="display: none;">Location not found</div>
+            <div class="err" id="error2" style="display: none;">Search must be in the form of "City", "City, State" or "City, Country".</div>
         </div>
 
 
         <div class="sidetwo">
-            
+            <div class="loading" id="loading" style="display: none;"></div> <!-- Loading spinner initially hidden -->
+
         </div>
     </main>
 </body>
